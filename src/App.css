@@ -1,0 +1,177 @@
+
+:root {
+  --primary: #D4A5A5;      /* Dusty pink - main accent */
+  --primary-dark: #C08B8B;  /* Deeper dusty pink for hover */
+  --primary-light: #F8EDED; /* Soft blush for backgrounds */
+  --text-dark: #5C4B3A;     /* Warm taupe/brown for text */
+  --text-muted: #8E7C6A;    /* Soft taupe for secondary text */
+  --bg-light: #FFF9F5;      /* Warm cream background */
+  --bg-soft: #FDF5F0;       /* Soft peach-beige for alternating sections */
+  --border: #EADDD2;        /* Warm border color */
+}
+/* Hero Section */
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-soft) 100%);
+}
+/* How I Work Section */
+.how-work-card {
+  border-radius: 20px;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background-color: white;
+}
+.how-work-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 25px -12px rgba(0, 0, 0, 0.08);
+}
+/* Concept Chips */
+.concept-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border: 1px solid var(--border);
+  border-radius: 40px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: all 0.2s ease;
+}
+.concept-chip i {
+  color: var(--primary);
+  font-size: 1rem;
+}
+.concept-chip:hover {
+  border-color: var(--primary);
+  background: var(--primary-light);
+}
+/* Card Hover Effect */
+.project-card-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.project-card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 25px -12px rgba(212, 165, 165, 0.15) !important;
+  border-color: var(--primary) !important;
+}
+/* Contact Links */
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 24px;
+  background: var(--primary-light);
+  border-radius: 40px;
+  color: var(--primary);
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+.contact-link:hover {
+  background: var(--primary);
+  color: white;
+}
+/* Hold Page */
+.hold-page {
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem;
+}
+.hold-icon-wrapper {
+  width: 80px;
+  height: 80px;
+  border-radius: 20px;
+  background: var(--primary-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 1.5rem;
+}
+.hold-icon-wrapper i {
+  font-size: 2.5rem;
+  color: var(--primary);
+}
+/* Navbar brand */
+.navbar-brand {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 1.35rem;
+  color: var(--text-dark) !important;
+}
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
+    text-align: center;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+}
+/* Primary buttons - dusty pink */
+.btn-primary {
+    background-color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+.btn-primary:hover {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    transform: translateY(-2px);
+}
+.btn-primary:active,
+.btn-primary:focus {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    box-shadow: 0 0 0 0.2rem rgba(212, 165, 165, 0.25) !important;
+}
+/* Outline buttons */
+.btn-outline-secondary {
+    border-color: var(--border) !important;
+    color: var(--text-muted) !important;
+}
+.btn-outline-secondary:hover {
+    border-color: var(--primary) !important;
+    color: var(--primary) !important;
+    background-color: var(--primary-light) !important;
+}
+/* Navbar links */
+.navbar-nav .nav-link {
+    color: var(--text-muted) !important;
+}
+.navbar-nav .nav-link:hover {
+    color: var(--primary) !important;
+}
+/* Body text */
+body {
+    color: var(--text-dark);
+}
+/* Section backgrounds */
+.bg-light {
+    background-color: var(--bg-soft) !important;
+}
+/* Text muted */
+.text-muted {
+    color: var(--text-muted) !important;
+}
+/* Border color */
+.border {
+    border-color: var(--border) !important;
+}
+/* Card borders */
+.card {
+    border-color: var(--border) !important;
+}
+/* Links */
+a {
+    color: var(--primary);
+}
+a:hover {
+    color: var(--primary-dark);
+}
