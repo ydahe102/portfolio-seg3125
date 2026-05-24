@@ -9,7 +9,7 @@ const projects = [
     icon: 'bi-scissors',
     category: 'SERVICE DESIGN',
     title: 'Hair Salon',
-    description: 'A booking platform designed for comfort, convenience, and community.'
+    description: 'A simple booking platform designed to make appointments easy and stress-free.'
   },
   {
     path: '/memoire',
@@ -17,7 +17,7 @@ const projects = [
     icon: 'bi-puzzle',
     category: 'GAME DESIGN',
     title: 'Memory Game',
-    description: 'A memory card game that tests recall with beautiful, calming visuals.'
+    description: 'A memory card game that helps improve focus and recall.'
   },
   {
     path: '/ecommerce',
@@ -25,7 +25,7 @@ const projects = [
     icon: 'bi-bag',
     category: 'ECOMMERCE',
     title: 'Clothing Store',
-    description: 'A shopping experience focused on discovery and easy checkout.'
+    description: 'A  shopping experience that feels clear and easy to use.'
   },
   {
     path: '/analytics',
@@ -33,7 +33,7 @@ const projects = [
     icon: 'bi-bar-chart',
     category: 'DATA VISUALIZATION',
     title: 'Analytics Dashboard',
-    description: 'Clear, actionable insights through thoughtful data presentation.'
+    description: 'Clear, actionable insights that helps people understand information at a glance'
   }
 ];
 

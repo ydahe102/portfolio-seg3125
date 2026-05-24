@@ -29,7 +29,7 @@ function Contact() {
               </a>
               
               {/* GitHub */}
-              <a href="https://github.com/yasminebachir" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
+              <a href="https://github.com/ydahe102" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
                  onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#D4A5A5'; e.currentTarget.style.color = 'white'; }}
                  onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#D4A5A5'; }}>
                 <i className="bi bi-github"></i>
