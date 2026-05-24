@@ -15,21 +15,21 @@ function HoldPage({ designNumber, title, category, icon }) {
             {/* Large centered icon representing the project type */}
             <div className="mx-auto mb-4 d-flex align-items-center justify-content-center rounded-4" 
                  style={{ width: '80px', height: '80px', backgroundColor: '#F8EDED' }}>
-              <i className={`${icon} fs-1`} style={{ color: '#D4A5A5' }}></i>
+              <i className={`${icon} fs-1`} style={{ color: '#8B4747' }}></i>
             </div>
             
             {/* Category label */}
-            <p className="text-uppercase small fw-semibold mb-2" style={{ color: '#D4A5A5', letterSpacing: '0.1em' }}>
+            <p className="text-uppercase small fw-semibold mb-2" style={{ color: '#8B4747', letterSpacing: '0.1em' }}>
               {category}
             </p>
             
             {/* Project title */}
-            <h1 className="display-5 fw-bold mb-3" style={{ color: '#5C4B3A' }}>{title}</h1>
+            <h1 className="display-5 fw-bold mb-3" style={{ color: '#4A3A2B' }}>{title}</h1>
             
             {/* Status box showing this is a work in progress */}
             <div className="border rounded-4 p-4 mt-4" style={{ backgroundColor: '#FDF5F0' }}>
-              <i className="bi bi-clock-history me-2" style={{ color: '#D4A5A5' }}></i>
-              <span className="fw-medium" style={{ color: '#5C4B3A' }}>In Progress · Coming Soon</span>
+              <i className="bi bi-clock-history me-2" style={{ color: '#8B4747' }}></i>
+              <span className="fw-medium" style={{ color: '#4A3A2B' }}>In Progress · Coming Soon</span>
             </div>
             
             {/* Explanation that this is for the course */}

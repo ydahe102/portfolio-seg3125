@@ -35,10 +35,10 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4A5A5;
+  background: #8B4747;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #C08B8B;
+  background: #6B3535;
 }

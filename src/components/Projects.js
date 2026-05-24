@@ -45,7 +45,7 @@ function Projects() {
         {/* Section heading and description */}
         <div className="row text-center mb-5">
           <div className="col-lg-8 mx-auto">
-            <h2 className="display-6 fw-bold mb-3" style={{ fontFamily: 'Space Grotesk', color: '#5C4B3A' }}>
+            <h2 className="display-6 fw-bold mb-3" style={{ fontFamily: 'Space Grotesk', color: '#4A3A2B' }}>
               Featured Projects
             </h2>
             <p className="text-muted">
@@ -66,7 +66,7 @@ function Projects() {
                      onMouseEnter={(e) => {
                        e.currentTarget.style.transform = 'translateY(-4px)';
                        e.currentTarget.style.boxShadow = '0 20px 25px -12px rgba(212, 165, 165, 0.15)';
-                       e.currentTarget.style.borderColor = '#D4A5A5';
+                       e.currentTarget.style.borderColor = '#8B4747';
                      }}
                      onMouseLeave={(e) => {
                        e.currentTarget.style.transform = 'translateY(0)';
@@ -87,15 +87,15 @@ function Projects() {
                   {/* Card content*/}
                   <div className="card-body p-3">
                     <div className="d-flex align-items-center gap-2 mb-2">
-                      <i className={`${project.icon} fs-5`} style={{ color: '#D4A5A5' }}></i>
-                      <span className="small text-uppercase fw-semibold" style={{ color: '#D4A5A5', letterSpacing: '0.05em' }}>
+                      <i className={`${project.icon} fs-5`} style={{ color: '#8B4747' }}></i>
+                      <span className="small text-uppercase fw-semibold" style={{ color: '#D8B4747', letterSpacing: '0.05em' }}>
                         {project.category}
                       </span>
                     </div>
-                    <h5 className="fw-bold mb-2" style={{ color: '#5C4B3A', fontSize: '1rem' }}>{project.title}</h5>
-                    <p className="small mb-3" style={{ color: '#8E7C6A' }}>{project.description}</p>
+                    <h5 className="fw-bold mb-2" style={{ color: '#4A3A2B', fontSize: '1rem' }}>{project.title}</h5>
+                    <p className="small mb-3" style={{ color: '#6B5A4A' }}>{project.description}</p>
                     
-                    <span className="small fw-semibold" style={{ color: '#D4A5A5' }}>
+                    <span className="small fw-semibold" style={{ color: '#8B4747' }}>
                       Coming soon <i className="bi bi-arrow-right ms-1"></i>
                     </span>
                   </div>

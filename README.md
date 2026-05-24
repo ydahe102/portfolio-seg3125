@@ -6,6 +6,18 @@ This is my personal design portfolio created for SEG3125 - Analysis and Design o
 
 ---
 
+## Where to Find Bootstrap Implementation
+
+| Bootstrap Feature | File Location |
+|------------------|----------------|
+| CSS and JS CDN links | `public/index.html` |
+| Navbar with mobile toggler | `src/components/Navbar.js` |
+| Grid system (row, col) | `src/components/Projects.js` |
+| Card component | `src/components/Projects.js` |
+| Responsive utilities | Multiple components |
+
+---
+
 ## Technologies Used
 
 - HTML5

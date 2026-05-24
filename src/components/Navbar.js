@@ -3,12 +3,29 @@ import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
+  const [activeSection, setActiveSection] = useState('about');
   const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
+
+      const sections = ['about', 'how-i-work', 'projects', 'contact'];
+      const scrollPosition = window.scrollY + 100;
+
+      for (const section of sections) {
+        const element = document.getElementById(section);
+        if (element) {
+          const offsetTop = element.offsetTop;
+          const offsetBottom = offsetTop + element.offsetHeight;
+          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
     };
+
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -18,6 +35,7 @@ function Navbar() {
       const element = document.getElementById(sectionId);
       if (element) {
         element.scrollIntoView({ behavior: 'smooth' });
+        setActiveSection(sectionId);
       }
     } else {
       navigate('/');
@@ -25,6 +43,7 @@ function Navbar() {
         const element = document.getElementById(sectionId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth' });
+          setActiveSection(sectionId);
         }
       }, 100);
     }
@@ -35,31 +54,41 @@ function Navbar() {
       <div className="container">
         <Link className="navbar-brand" to="/">Yasmine Bachir</Link>
         
-        {/* Bootstrap mobile menu button */}
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
           <span className="navbar-toggler-icon"></span>
         </button>
         
-        {/* Bootstrap collapsible menu */}
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto gap-3">
             <li className="nav-item">
-              <button className="nav-link btn btn-link" onClick={() => scrollToSection('about')}>
+              <button 
+                className={`nav-link btn btn-link ${activeSection === 'about' ? 'active' : ''}`} 
+                onClick={() => scrollToSection('about')}
+              >
                 About
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn btn-link" onClick={() => scrollToSection('how-i-work')}>
+              <button 
+                className={`nav-link btn btn-link ${activeSection === 'how-i-work' ? 'active' : ''}`} 
+                onClick={() => scrollToSection('how-i-work')}
+              >
                 How I Work
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn btn-link" onClick={() => scrollToSection('projects')}>
+              <button 
+                className={`nav-link btn btn-link ${activeSection === 'projects' ? 'active' : ''}`} 
+                onClick={() => scrollToSection('projects')}
+              >
                 Projects
               </button>
             </li>
             <li className="nav-item">
-              <button className="nav-link btn btn-link" onClick={() => scrollToSection('contact')}>
+              <button 
+                className={`nav-link btn btn-link ${activeSection === 'contact' ? 'active' : ''}`} 
+                onClick={() => scrollToSection('contact')}
+              >
                 Contact
               </button>
             </li>

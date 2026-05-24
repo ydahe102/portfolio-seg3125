@@ -22,24 +22,24 @@ function Contact() {
             <div className="d-flex flex-wrap gap-3 justify-content-center">
               {/* Email */}
               <a href="mailto:ydahe102@uottawa.ca" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
-                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#D4A5A5'; e.currentTarget.style.color = 'white'; }}
-                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#D4A5A5'; }}>
+                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8B4747'; e.currentTarget.style.color = 'white'; }}
+                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#8B4747'; }}>
                 <i className="bi bi-envelope-fill"></i>
                 ydahe102@uottawa.ca
               </a>
               
               {/* GitHub */}
               <a href="https://github.com/ydahe102" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
-                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#D4A5A5'; e.currentTarget.style.color = 'white'; }}
-                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#D4A5A5'; }}>
+                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8B4747'; e.currentTarget.style.color = 'white'; }}
+                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#8B4747'; }}>
                 <i className="bi bi-github"></i>
                 GitHub
               </a>
               
               {/* LinkedIn */}
               <a href="https://www.linkedin.com/in/yasminebachirr" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
-                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#D4A5A5'; e.currentTarget.style.color = 'white'; }}
-                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#D4A5A5'; }}>
+                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8B4747'; e.currentTarget.style.color = 'white'; }}
+                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#8B4747'; }}>
                 <i className="bi bi-linkedin"></i>
                 LinkedIn
               </a>
