@@ -4,12 +4,12 @@ import { Link } from 'react-router-dom';
 // List of my 4 projects
 const projects = [
   {
-    path: 'https://styled-by-her.netlify.app',
-    image: '/images/service.jpg',
-    icon: 'bi-scissors',
+    path: 'https://pethub-veterinary.netlify.app',
+    image: '/images/pethub-veterinary.jpg',
+    icon: 'bi-heart-pulse',
     category: 'SERVICE DESIGN',
-    title: 'Hair Salon',
-    description: 'A simple booking platform designed to make appointments easy and stress-free.',
+    title: 'PetHub Veterinary',
+    description: 'A veterinary clinic prototype for viewing services, pricing, and booking appointments online.',
     isExternal: true,
     buttonText: 'View live site'
   },
