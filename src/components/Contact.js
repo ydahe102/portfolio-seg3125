@@ -1,60 +1,58 @@
-
 import React from 'react';
+
 function Contact() {
   const currentYear = new Date().getFullYear();
+
+  const links = [
+    {
+      href: 'mailto:ydahe102@uottawa.ca',
+      icon: 'bi-envelope-fill',
+      label: 'ydahe102@uottawa.ca',
+    },
+    {
+      href: 'https://github.com/ydahe102',
+      icon: 'bi-github',
+      label: 'GitHub',
+      external: true,
+    },
+    {
+      href: 'https://www.linkedin.com/in/yasminebachirr',
+      icon: 'bi-linkedin',
+      label: 'LinkedIn',
+      external: true,
+    },
+  ];
+
   return (
-    <section id="contact" className="py-5" style={{ backgroundColor: '#FDF5F0' }}>
-      <div className="container py-5">
-        <div className="row text-center mb-4">
-          <div className="col-lg-8 mx-auto">
-            <h2 className="display-6 fw-bold mb-3" style={{ fontFamily: 'Space Grotesk', color: '#5C4B3A' }}>
-              Contact
-            </h2>
-            <p style={{ color: '#8E7C6A' }}>
-              Open to conversations about front-end development, UI/UX opportunities, 
-              or just to connect.
-            </p>
-          </div>
+    <section id="contact" className="contact-section">
+      <div className="container">
+        <div className="section-heading">
+          <span className="section-kicker">Contact</span>
+          <h2>Let's connect</h2>
+          <p>
+            Open to conversations about front-end development, UI/UX opportunities, or course project feedback.
+          </p>
         </div>
-        
-        <div className="row">
-          <div className="col-lg-8 mx-auto">
-            <div className="d-flex flex-wrap gap-3 justify-content-center">
-              {/* Email */}
-              <a href="mailto:ydahe102@uottawa.ca" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
-                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8B4747'; e.currentTarget.style.color = 'white'; }}
-                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#8B4747'; }}>
-                <i className="bi bi-envelope-fill"></i>
-                ydahe102@uottawa.ca
-              </a>
-              
-              {/* GitHub */}
-              <a href="https://github.com/ydahe102" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
-                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8B4747'; e.currentTarget.style.color = 'white'; }}
-                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#8B4747'; }}>
-                <i className="bi bi-github"></i>
-                GitHub
-              </a>
-              
-              {/* LinkedIn */}
-              <a href="https://www.linkedin.com/in/yasminebachirr" target="_blank" rel="noopener noreferrer" className="contact-link" style={{ display: 'inline-flex', alignItems: 'center', gap: '10px', padding: '12px 24px', backgroundColor: '#F8EDED', borderRadius: '40px', color: '#D4A5A5', fontWeight: '500', textDecoration: 'none', transition: 'all 0.2s ease' }}
-                 onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#8B4747'; e.currentTarget.style.color = 'white'; }}
-                 onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#F8EDED'; e.currentTarget.style.color = '#8B4747'; }}>
-                <i className="bi bi-linkedin"></i>
-                LinkedIn
-              </a>
-            </div>
-            
-            {/* Copyright line */}
-            <div className="text-center mt-5 pt-4">
-              <p className="small" style={{ color: '#8E7C6A' }}>
-                © {currentYear} Yasmine Bachir
-              </p>
-            </div>
-          </div>
+
+        <div className="contact-links">
+          {links.map((link) => (
+            <a
+              key={link.label}
+              href={link.href}
+              target={link.external ? '_blank' : undefined}
+              rel={link.external ? 'noopener noreferrer' : undefined}
+              className="contact-link"
+            >
+              <i className={`bi ${link.icon}`}></i>
+              {link.label}
+            </a>
+          ))}
         </div>
+
+        <p className="copyright">&copy; {currentYear} Yasmine Bachir</p>
       </div>
     </section>
   );
 }
+
 export default Contact;
