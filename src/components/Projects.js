@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const featuredProject = {
-  path: 'https://pet-hub-veterinary.netlify.app',
+  path: 'https://pet-hub-veterinary.netlify.app/',
   image: '/images/pethub-veterinary.jpg',
   icon: 'bi-heart-pulse',
   category: 'SERVICE DESIGN',
