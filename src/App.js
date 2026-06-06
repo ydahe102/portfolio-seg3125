@@ -6,7 +6,6 @@ import HowIWork from './components/HowIWork';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
 import HoldPage from './components/HoldPage';
-import SalonService from './components/SalonService';
 import './App.css';
 
 function App() {
@@ -23,9 +22,6 @@ function App() {
               <Contact />
             </>
           } />
-        
-          <Route path="/service" element={<SalonService />} />
-          
           <Route path="/memoire" element={
             <>
               <Navbar />
