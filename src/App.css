@@ -336,6 +336,14 @@ a:hover {
   padding: 0.35rem 0.7rem;
 }
 
+.compact-tags {
+  margin-bottom: 0.9rem;
+}
+
+.compact-tags span {
+  font-size: 0.76rem;
+}
+
 .project-link {
   color: var(--primary);
   display: inline-flex;
