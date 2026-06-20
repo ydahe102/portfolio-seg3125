@@ -1,25 +1,25 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const featuredProject = {
-  path: 'https://pet-hub-veterinary.netlify.app/',
-  image: '/images/pethub-veterinary.jpg',
-  icon: 'bi-heart-pulse',
-  category: 'SERVICE DESIGN',
-  title: 'PetHub Veterinary',
-  description: 'A React high-fidelity prototype for a veterinary clinic, focused on service discovery, transparent pricing, and appointment booking.',
-  tags: ['React', 'Booking flow', 'Responsive UI'],
-  isExternal: true,
-};
-
-const upcomingProjects = [
+const projects = [
+  {
+    path: 'https://pet-hub-veterinary.netlify.app/',
+    image: '/images/pethub-veterinary.jpg',
+    icon: 'bi-heart-pulse',
+    category: 'SERVICE DESIGN',
+    title: 'PetHub Veterinary',
+    description: 'A React prototype for a veterinary clinic, focused on service discovery, transparent pricing, and appointment booking.',
+    tags: ['React', 'Booking flow', 'Responsive UI'],
+    isExternal: true,
+    status: 'View live site',
+  },
   {
     path: 'https://digimemo.netlify.app/',
     image: '/images/memory.png',
     icon: 'bi-puzzle',
     category: 'GAME DESIGN',
     title: 'Digimemo',
-    description: 'A React sequence-memory game with difficulty levels, lives, scoring, keyboard support, and accessible feedback.',
+    description: 'A sequence-memory game with difficulty levels, lives, scoring, keyboard support, and accessible feedback.',
     tags: ['React', 'Memory game', 'Accessibility'],
     isExternal: true,
     status: 'View live game',
@@ -30,7 +30,9 @@ const upcomingProjects = [
     icon: 'bi-bag',
     category: 'ECOMMERCE',
     title: 'Clothing Store',
-    description: 'A shopping experience that feels clear and easy to use.',
+    description: 'A shopping experience concept that feels clear and easy to use.',
+    tags: ['Interface design', 'Shopping flow'],
+    status: 'Coming soon',
   },
   {
     path: '/analytics',
@@ -38,7 +40,9 @@ const upcomingProjects = [
     icon: 'bi-bar-chart',
     category: 'DATA VISUALIZATION',
     title: 'Analytics Dashboard',
-    description: 'Clear, actionable insights that help people understand information at a glance.',
+    description: 'A dashboard concept for helping people understand information at a glance.',
+    tags: ['Dashboard', 'Data UI'],
+    status: 'Coming soon',
   },
 ];
 
@@ -49,7 +53,7 @@ function ProjectCard({ project }) {
     : { to: project.path };
 
   return (
-    <CardTag {...linkProps} className="project-card compact text-decoration-none">
+    <CardTag {...linkProps} className="project-card text-decoration-none">
       <div className="project-thumb">
         <img src={project.image} alt={project.title} />
       </div>
@@ -60,15 +64,13 @@ function ProjectCard({ project }) {
         </div>
         <h3>{project.title}</h3>
         <p>{project.description}</p>
-        {project.tags && (
-          <div className="project-tags compact-tags">
-            {project.tags.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </div>
-        )}
+        <div className="project-tags">
+          {project.tags.map((tag) => (
+            <span key={tag}>{tag}</span>
+          ))}
+        </div>
         <span className="project-link">
-          {project.status || 'Coming soon'}{' '}
+          {project.status}
           <i className={`bi ${project.isExternal ? 'bi-box-arrow-up-right' : 'bi-arrow-right'}`}></i>
         </span>
       </div>
@@ -88,33 +90,8 @@ function Projects() {
           </p>
         </div>
 
-        <a
-          href={featuredProject.path}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="project-card featured text-decoration-none"
-        >
-          <div className="project-thumb featured-thumb">
-            <img src={featuredProject.image} alt={featuredProject.title} />
-          </div>
-          <div className="project-body featured-body">
-            <div className="project-meta">
-              <i className={`bi ${featuredProject.icon}`}></i>
-              <span>{featuredProject.category}</span>
-            </div>
-            <h3>{featuredProject.title}</h3>
-            <p>{featuredProject.description}</p>
-            <div className="project-tags">
-              {featuredProject.tags.map((tag) => (
-                <span key={tag}>{tag}</span>
-              ))}
-            </div>
-            <span className="project-link">View live site <i className="bi bi-box-arrow-up-right"></i></span>
-          </div>
-        </a>
-
         <div className="project-grid">
-          {upcomingProjects.map((project) => (
+          {projects.map((project) => (
             <ProjectCard key={project.title} project={project} />
           ))}
         </div>

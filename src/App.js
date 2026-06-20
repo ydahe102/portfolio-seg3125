@@ -22,12 +22,6 @@ function App() {
               <Contact />
             </>
           } />
-          <Route path="/memoire" element={
-            <>
-              <Navbar />
-              <HoldPage designNumber={2} title="Memory Game" category="Game Design" icon="bi-puzzle" />
-            </>
-          } />
           <Route path="/ecommerce" element={
             <>
               <Navbar />
