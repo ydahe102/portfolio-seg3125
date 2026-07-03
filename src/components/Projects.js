@@ -25,14 +25,15 @@ const projects = [
     status: 'View live game',
   },
   {
-    path: '/ecommerce',
+    path: 'https://mira-skincare.netlify.app/',
     image: '/images/ecommerce.jpg',
     icon: 'bi-bag',
     category: 'ECOMMERCE',
-    title: 'Clothing Store',
-    description: 'A shopping experience concept that feels clear and easy to use.',
-    tags: ['Interface design', 'Shopping flow'],
-    status: 'Coming soon',
+    title: 'Mira Skincare',
+    description: 'A skincare e-commerce prototype with faceted search, product details, cart flow, checkout, and feedback survey.',
+    tags: ['React', 'Faceted search', 'Checkout flow'],
+    isExternal: true,
+    status: 'View live site',
   },
   {
     path: '/analytics',
@@ -86,7 +87,7 @@ function Projects() {
           <span className="section-kicker">Case studies</span>
           <h2>Featured Projects</h2>
           <p>
-            Course projects developed throughout SEG3125, including completed service design and memory game prototypes.
+            Course projects developed throughout SEG3125, including service, game, and e-commerce prototypes.
           </p>
         </div>
 

@@ -25,7 +25,7 @@ function App() {
           <Route path="/ecommerce" element={
             <>
               <Navbar />
-              <HoldPage designNumber={3} title="Clothing Store" category="E-commerce Design" icon="bi-bag" />
+              <HoldPage title="Mira Skincare" category="E-commerce Design" icon="bi-bag" />
             </>
           } />
           <Route path="/analytics" element={
