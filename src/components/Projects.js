@@ -88,7 +88,7 @@ function Projects() {
           <span className="section-kicker">Case studies</span>
           <h2>Featured Projects</h2>
           <p>
-            Course projects developed throughout SEG3125, including service, game, and e-commerce prototypes.
+            Selected React and UI projects that connect classroom design principles with practical, usable interfaces.
           </p>
         </div>
 

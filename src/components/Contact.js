@@ -30,7 +30,7 @@ function Contact() {
           <span className="section-kicker">Contact</span>
           <h2>Let's connect</h2>
           <p>
-            Open to conversations about front-end development, UI/UX opportunities, or course project feedback.
+            Open to front-end development, software testing, automation, and UI/UX opportunities.
           </p>
         </div>
 

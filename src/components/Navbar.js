@@ -10,7 +10,7 @@ function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 50);
 
-      const sections = ['about', 'how-i-work', 'projects', 'contact'];
+      const sections = ['about', 'resume', 'projects', 'contact'];
       const scrollPosition = window.scrollY + 100;
 
       for (const section of sections) {
@@ -70,10 +70,10 @@ function Navbar() {
             </li>
             <li className="nav-item">
               <button 
-                className={`nav-link btn btn-link ${activeSection === 'how-i-work' ? 'active' : ''}`} 
-                onClick={() => scrollToSection('how-i-work')}
+                className={`nav-link btn btn-link ${activeSection === 'resume' ? 'active' : ''}`} 
+                onClick={() => scrollToSection('resume')}
               >
-                How I Work
+                Resume
               </button>
             </li>
             <li className="nav-item">
