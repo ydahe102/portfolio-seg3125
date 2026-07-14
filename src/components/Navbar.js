@@ -1,101 +1,104 @@
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+
+const navigation = [
+  { id: 'about', label: 'About' },
+  { id: 'process', label: 'How I work' },
+  { id: 'projects', label: 'Projects' },
+  { id: 'contact', label: 'Contact' },
+];
 
 function Navbar() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState('about');
-  const navigate = useNavigate();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50);
+    const handleScroll = () => setScrolled(window.scrollY > 18);
+    handleScroll();
+    window.addEventListener('scroll', handleScroll, { passive: true });
 
-      const sections = ['about', 'resume', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 100;
-
-      for (const section of sections) {
-        const element = document.getElementById(section);
-        if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetBottom = offsetTop + element.offsetHeight;
-          if (scrollPosition >= offsetTop && scrollPosition < offsetBottom) {
-            setActiveSection(section);
-            break;
-          }
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollToSection = (sectionId) => {
-    if (window.location.pathname === '/') {
-      const element = document.getElementById(sectionId);
-      if (element) {
-        element.scrollIntoView({ behavior: 'smooth' });
-        setActiveSection(sectionId);
-      }
-    } else {
-      navigate('/');
-      setTimeout(() => {
-        const element = document.getElementById(sectionId);
-        if (element) {
-          element.scrollIntoView({ behavior: 'smooth' });
-          setActiveSection(sectionId);
+  useEffect(() => {
+    // Highlights the section that is currently on the screen.
+    const sections = navigation
+      .map((item) => document.getElementById(item.id))
+      .filter(Boolean);
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSection = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+
+        if (visibleSection) {
+          setActiveSection(visibleSection.target.id);
         }
-      }, 100);
-    }
-  };
+      },
+      {
+        rootMargin: '-25% 0px -55% 0px',
+        threshold: [0.1, 0.3, 0.6],
+      }
+    );
+
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    // The Escape key closes the mobile menu.
+    const closeOnEscape = (event) => {
+      if (event.key === 'Escape') {
+        setMenuOpen(false);
+      }
+    };
+
+    document.addEventListener('keydown', closeOnEscape);
+    return () => document.removeEventListener('keydown', closeOnEscape);
+  }, []);
+
+  const handleNavigation = () => setMenuOpen(false);
 
   return (
-    <nav className={`navbar navbar-expand-lg fixed-top ${scrolled ? 'bg-white shadow-sm' : 'bg-transparent'}`}>
-      <div className="container">
-        <Link className="navbar-brand" to="/">Yasmine Bachir</Link>
-        
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span className="navbar-toggler-icon"></span>
+    <header className={`site-header ${scrolled ? 'is-scrolled' : ''}`}>
+      <div className="portfolio-container nav-inner">
+        <a className="brand" href="#about" onClick={handleNavigation}>
+          <span className="brand-mark" aria-hidden="true">YB</span>
+          <span>Yasmine Bachir</span>
+        </a>
+
+        <button
+          className={`menu-toggle ${menuOpen ? 'is-open' : ''}`}
+          type="button"
+          aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'}
+          aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
+          onClick={() => setMenuOpen((current) => !current)}
+        >
+          <span />
+          <span />
         </button>
-        
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto gap-3">
-            <li className="nav-item">
-              <button 
-                className={`nav-link btn btn-link ${activeSection === 'about' ? 'active' : ''}`} 
-                onClick={() => scrollToSection('about')}
-              >
-                About
-              </button>
-            </li>
-            <li className="nav-item">
-              <button 
-                className={`nav-link btn btn-link ${activeSection === 'resume' ? 'active' : ''}`} 
-                onClick={() => scrollToSection('resume')}
-              >
-                Resume
-              </button>
-            </li>
-            <li className="nav-item">
-              <button 
-                className={`nav-link btn btn-link ${activeSection === 'projects' ? 'active' : ''}`} 
-                onClick={() => scrollToSection('projects')}
-              >
-                Projects
-              </button>
-            </li>
-            <li className="nav-item">
-              <button 
-                className={`nav-link btn btn-link ${activeSection === 'contact' ? 'active' : ''}`} 
-                onClick={() => scrollToSection('contact')}
-              >
-                Contact
-              </button>
-            </li>
-          </ul>
-        </div>
+
+        <nav
+          id="primary-navigation"
+          className={`primary-navigation ${menuOpen ? 'is-open' : ''}`}
+          aria-label="Primary navigation"
+        >
+          {navigation.map((item) => (
+            <a
+              key={item.id}
+              href={`#${item.id}`}
+              className={activeSection === item.id ? 'active' : ''}
+              aria-current={activeSection === item.id ? 'location' : undefined}
+              onClick={handleNavigation}
+            >
+              {item.label}
+            </a>
+          ))}
+        </nav>
       </div>
-    </nav>
+    </header>
   );
 }
 

@@ -1,5 +1,4 @@
 import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import ResumeSnapshot from './components/ResumeSnapshot';
@@ -9,21 +8,21 @@ import './App.css';
 
 function App() {
   return (
-    <BrowserRouter>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={
-            <>
-              <Navbar />
-              <Hero />
-              <ResumeSnapshot />
-              <Projects />
-              <Contact />
-            </>
-          } />
-        </Routes>
-      </div>
-    </BrowserRouter>
+    <div className="site-shell">
+      {/* Lets keyboard users skip the navigation menu. */}
+      <a className="skip-link" href="#main-content">
+        Skip to main content
+      </a>
+
+      <Navbar />
+
+      <main id="main-content">
+        <Hero />
+        <ResumeSnapshot />
+        <Projects />
+        <Contact />
+      </main>
+    </div>
   );
 }
 
