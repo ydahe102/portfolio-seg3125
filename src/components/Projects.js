@@ -15,7 +15,7 @@ const projects = [
   },
   {
     path: 'https://digimemo.netlify.app/',
-    image: '/images/memory.png',
+    image: '/images/memorygame.png',
     icon: 'bi-puzzle',
     category: 'GAME DESIGN',
     title: 'Digimemo',
@@ -36,14 +36,15 @@ const projects = [
     status: 'View live site',
   },
   {
-    path: '/analytics',
+    path: 'https://canadian-minimum-wage-dashboard.netlify.app/',
     image: '/images/dashboard.png',
     icon: 'bi-bar-chart',
     category: 'DATA VISUALIZATION',
-    title: 'Analytics Dashboard',
-    description: 'A dashboard concept for helping people understand information at a glance.',
-    tags: ['Dashboard', 'Data UI'],
-    status: 'Coming soon',
+    title: 'Canadian Minimum Wage Dashboard',
+    description: 'An interactive React dashboard for comparing Canadian minimum wage trends across provinces.',
+    tags: ['React', 'Government data', 'Data UI'],
+    isExternal: true,
+    status: 'View live dashboard',
   },
 ];
 

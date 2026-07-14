@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import HowIWork from './components/HowIWork';
 import Projects from './components/Projects';
 import Contact from './components/Contact';
-import HoldPage from './components/HoldPage';
 import './App.css';
 
 function App() {
@@ -20,18 +19,6 @@ function App() {
               <HowIWork />
               <Projects />
               <Contact />
-            </>
-          } />
-          <Route path="/ecommerce" element={
-            <>
-              <Navbar />
-              <HoldPage title="Mira Skincare" category="E-commerce Design" icon="bi-bag" />
-            </>
-          } />
-          <Route path="/analytics" element={
-            <>
-              <Navbar />
-              <HoldPage designNumber={4} title="Analytics Dashboard" category="Data Visualization" icon="bi-bar-chart" />
             </>
           } />
         </Routes>
