@@ -101,8 +101,8 @@ function Projects() {
     <section id="projects" className="projects-section" aria-labelledby="projects-title">
       <div className="portfolio-container">
         <div className="section-intro">
-          <p className="eyebrow">Selected work</p>
-          <h2 id="projects-title">Selected development projects.</h2>
+          <p className="eyebrow">My projects</p>
+          <h2 id="projects-title">Projects I&apos;ve built.</h2>
           <p>
             Web applications built with JavaScript, CSS, and React.
           </p>
